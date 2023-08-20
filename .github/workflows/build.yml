@@ -8,6 +8,7 @@ on:
 jobs:
   linux-bin-and-snap-release:
     runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
 
     steps:
       - uses: actions/setup-node@v3
@@ -78,7 +79,6 @@ jobs:
 
   mac-bin:
     runs-on: macos-latest
-    if: startsWith(github.ref, 'refs/tags/v')
 
     steps:
       - uses: actions/setup-node@v3
