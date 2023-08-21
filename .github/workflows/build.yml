@@ -112,7 +112,6 @@ jobs:
             ${{ runner.os }}-node-
 
       - uses: browser-actions/setup-chrome@v1
-      - run: chrome --version
 
       - uses: actions/checkout@v2
       - uses: nanasess/setup-chromedriver@v2
