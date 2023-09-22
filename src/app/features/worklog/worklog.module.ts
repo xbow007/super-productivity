@@ -6,14 +6,17 @@ import { DialogWorklogExportComponent } from './dialog-worklog-export/dialog-wor
 import { WorklogExportComponent } from './worklog-export/worklog-export.component';
 import { FormsModule } from '@angular/forms';
 import { WorklogWeekComponent } from './worklog-week/worklog-week.component';
+import { DialogViewWorklogTaskComponent } from './dialog-view-worklog-task/dialog-view-worklog-task.component';
+import { TasksModule } from '../tasks/tasks.module';
 
 @NgModule({
-  imports: [CommonModule, UiModule, FormsModule],
+  imports: [CommonModule, UiModule, FormsModule, TasksModule],
   declarations: [
     WorklogComponent,
     DialogWorklogExportComponent,
     WorklogExportComponent,
     WorklogWeekComponent,
+    DialogViewWorklogTaskComponent,
   ],
   exports: [
     WorklogComponent,

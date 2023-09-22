@@ -223,6 +223,7 @@ $this-table-outer-padding-left-right: $s * 6;
     &.title {
       padding-left: $s * 2;
       padding-right: 0;
+      cursor: pointer;
     }
 
     &.worked {

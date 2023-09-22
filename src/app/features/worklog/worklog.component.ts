@@ -22,6 +22,7 @@ import { T } from '../../t.const';
 import { WorkContextService } from '../work-context/work-context.service';
 import { SearchQueryParams } from '../search-bar/search-bar.model';
 import { Subscription } from 'rxjs';
+import { DialogViewWorklogTaskComponent } from './dialog-view-worklog-task/dialog-view-worklog-task.component';
 
 @Component({
   selector: 'worklog',
@@ -143,5 +144,11 @@ export class WorklogComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     this._subs.unsubscribe();
+  }
+
+  openTaskViewDialog(task: TaskCopy, isNonArchiveTask: boolean): void {
+    this._matDialog.open(DialogViewWorklogTaskComponent, {
+      data: { task, isNonArchiveTask },
+    });
   }
 }
