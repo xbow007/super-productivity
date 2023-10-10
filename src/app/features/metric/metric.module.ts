@@ -11,7 +11,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { MetricEffects } from './store/metric.effects';
 import { ObstructionModule } from './obstruction/obstruction.module';
 import { ImprovementModule } from './improvement/improvement.module';
-import { ChartsModule } from 'ng2-charts';
+import { NgChartsModule } from 'ng2-charts';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -21,7 +21,7 @@ import { RouterModule } from '@angular/router';
     UiModule,
     ObstructionModule,
     ImprovementModule,
-    ChartsModule,
+    NgChartsModule,
     StoreModule.forFeature(METRIC_FEATURE_NAME, metricReducer),
     EffectsModule.forFeature([MetricEffects]),
     RouterModule,

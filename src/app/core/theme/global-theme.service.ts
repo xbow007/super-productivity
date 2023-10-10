@@ -192,18 +192,18 @@ export class GlobalThemeService {
             labels: { fontColor: 'white' },
           },
           scales: {
-            xAxes: [
-              {
-                ticks: { fontColor: 'white' },
-                gridLines: { color: 'rgba(255,255,255,0.1)' },
-              },
-            ],
-            yAxes: [
-              {
-                ticks: { fontColor: 'white' },
-                gridLines: { color: 'rgba(255,255,255,0.1)' },
-              },
-            ],
+            // xAxes: [
+            //   {
+            //     ticks: { fontColor: 'white' },
+            //     gridLines: { color: 'rgba(255,255,255,0.1)' },
+            //   },
+            // ],
+            // yAxes: [
+            //   {
+            //     ticks: { fontColor: 'white' },
+            //     gridLines: { color: 'rgba(255,255,255,0.1)' },
+            //   },
+            // ],
           },
         }
       : {};
