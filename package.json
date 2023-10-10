@@ -95,8 +95,7 @@
     "int:watch": "node ./tools/extract-i18n-watch.js",
     "int:find": "ngx-translate-extract --input ./src --output ./src/assets/i18n/*.json  --sort --format namespaced-json --marker _",
     "int:clean": "ngx-translate-extract --input ./src --output ./src/assets/i18n/*.json --clean --sort --format namespaced-json --marker _",
-    "int:test": "node ./tools/test-lng-files.js",
-    "postinstall": "cross-env-shell node ./tools/is-skip-postinstall.js --env.SKIP_POST_INSTALL=$SKIP_POST_INSTALL || ngcc --tsconfig src/tsconfig.app.json"
+    "int:test": "node ./tools/test-lng-files.js"
   },
   "publish": [
     {
@@ -210,9 +209,9 @@
     "nanoid": "^4.0.0",
     "new-github-issue-url": "^0.2.1",
     "ng2-charts": "^2.3.0",
-    "ng2-dragula": "^2.1.1",
+    "ng2-dragula": "^5.0.1",
     "ngx-date-time-picker-schedule": "^9.4.17",
-    "ngx-markdown": "^14.0.1",
+    "ngx-markdown": "^16.0.0",
     "nightwatch": "^1.7.11",
     "object-path": "^0.11.8",
     "p-throttle": "^3.1.0",
