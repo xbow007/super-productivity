@@ -13,7 +13,7 @@ import { standardListAnimation } from '../../ui/animations/standard-list.ani';
 import { getTomorrow } from '../../util/get-tomorrow';
 import { TimelineViewEntryType } from './timeline.const';
 import { GlobalConfigService } from '../config/global-config.service';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { LS } from '../../core/persistence/storage-keys.const';
 import { DialogTimelineInitialSetupComponent } from './dialog-timeline-initial-setup/dialog-timeline-initial-setup.component';
 import { WorkContextService } from '../work-context/work-context.service';

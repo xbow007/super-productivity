@@ -1,5 +1,5 @@
 @import '../../../../variables';
-@import '~angular-material-css-vars/src/lib/public-util';
+@use 'angular-material-css-vars' as mat-css-vars;
 @import './task.component.mixins';
 
 // TASK BOX STYLES

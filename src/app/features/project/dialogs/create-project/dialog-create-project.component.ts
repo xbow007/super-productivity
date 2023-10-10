@@ -6,7 +6,11 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import {
+  MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA,
+  MatLegacyDialog as MatDialog,
+  MatLegacyDialogRef as MatDialogRef,
+} from '@angular/material/legacy-dialog';
 import { Project, ProjectCopy } from '../../project.model';
 import { UntypedFormGroup } from '@angular/forms';
 import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
@@ -29,10 +33,10 @@ import { DialogGithubInitialSetupComponent } from '../../../issue/providers/gith
 import {
   CALDAV_TYPE,
   GITEA_TYPE,
-  REDMINE_TYPE,
   GITHUB_TYPE,
   GITLAB_TYPE,
   OPEN_PROJECT_TYPE,
+  REDMINE_TYPE,
 } from '../../../issue/issue.const';
 import { T } from '../../../../t.const';
 import { DEFAULT_JIRA_CFG } from '../../../issue/providers/jira/jira.const';

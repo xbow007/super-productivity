@@ -8,7 +8,7 @@ import {
 import { TaskService } from '../../features/tasks/task.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IS_ELECTRON } from '../../app.constants';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { combineLatest, from, merge, Observable, Subject } from 'rxjs';
 import { IPC } from '../../../../electron/shared-with-frontend/ipc-events.const';
 import { DialogConfirmComponent } from '../../ui/dialog-confirm/dialog-confirm.component';
