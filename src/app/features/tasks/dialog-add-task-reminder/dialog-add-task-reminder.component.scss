@@ -6,7 +6,7 @@
   justify-content: stretch;
   align-items: stretch;
 
-  :host-context([dir=rtl]) {
+  :host-context([dir='rtl']) {
     direction: rtl;
   }
 }
@@ -31,7 +31,7 @@
     overflow: hidden;
   }
 
-  .mat-dialog-content {
+  .mat-mdc-dialog-content {
     margin: -24px;
     margin-bottom: 0;
     padding: 0;
@@ -39,7 +39,7 @@
     max-height: 82vh;
   }
 
-  .mat-dialog-actions {
+  .mat-mdc-dialog-actions {
     min-height: 42px;
     padding: 4px;
     margin: -24px;
@@ -57,10 +57,10 @@
   .additional-controls {
     padding-top: $s;
     // same as $owl-divider-color
-    border-top: 1px solid rgba(0, 0, 0, .12);
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
     @include darkTheme(true) {
       // same as $owl-dark-divider-color
-      border-color: rgba(255, 255, 255, .12);
+      border-color: rgba(255, 255, 255, 0.12);
     }
   }
 

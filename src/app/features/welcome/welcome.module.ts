@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UiModule } from '../../ui/ui.module';
 import { DialogWelcomeComponent } from './dialog-welcome/dialog-welcome.component';
-import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { LS } from '../../core/persistence/storage-keys.const';
 import { Store } from '@ngrx/store';
 import { ProjectService } from '../project/project.service';

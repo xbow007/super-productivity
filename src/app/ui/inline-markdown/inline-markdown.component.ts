@@ -17,7 +17,7 @@ import { IS_ELECTRON } from '../../app.constants';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { GlobalConfigService } from '../../features/config/global-config.service';
-import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogFullscreenMarkdownComponent } from '../dialog-fullscreen-markdown/dialog-fullscreen-markdown.component';
 import { ElectronService } from '../../core/electron/electron.service';
 import { shell } from 'electron';

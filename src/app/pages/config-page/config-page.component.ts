@@ -22,7 +22,7 @@ import { Subscription } from 'rxjs';
 import { ProjectCfgFormKey } from '../../features/project/project.model';
 import { environment } from '../../../environments/environment';
 import { T } from '../../t.const';
-import { MatLegacySlideToggleChange as MatSlideToggleChange } from '@angular/material/legacy-slide-toggle';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { versions } from '../../../environments/versions';
 
 @Component({
