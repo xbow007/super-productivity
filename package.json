@@ -164,7 +164,7 @@
     "@types/object-path": "^0.11.1",
     "@typescript-eslint/eslint-plugin": "5.8.1",
     "@typescript-eslint/parser": "5.27.0",
-    "angular-material-css-vars": "^3.0.0",
+    "angular-material-css-vars": "^5.0.2",
     "axios": "^1.4.0",
     "chart.js": "^4.4.0",
     "chromedriver": "^117.0.3",
