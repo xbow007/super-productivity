@@ -33,7 +33,7 @@ import { AnimationEvent } from '@angular/animations';
 import { SearchItem, SearchQueryParams } from './search-bar.model';
 import { getWorklogStr } from '../../util/get-work-log-str';
 import { devError } from 'src/app/util/dev-error';
-import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
+import { MatLegacyAutocompleteTrigger as MatAutocompleteTrigger } from '@angular/material/legacy-autocomplete';
 
 const MAX_RESULTS = 100;
 

@@ -3,7 +3,7 @@ import { expandAnimation, expandFadeAnimation } from '../../ui/animations/expand
 import { fadeAnimation } from '../../ui/animations/fade.ani';
 import { WorklogService } from '../worklog/worklog.service';
 import { SimpleCounterService } from '../simple-counter/simple-counter.service';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { TaskService } from '../tasks/task.service';
 import { getWeekNumber } from '../../util/get-week-number';
 import { getDateRangeForWeek } from '../../util/get-date-range-for-week';

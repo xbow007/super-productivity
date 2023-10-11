@@ -5,7 +5,7 @@ import { WorkContextService } from '../../work-context/work-context.service';
 import { ElectronService } from '../../../core/electron/electron.service';
 import { TaskService } from '../../tasks/task.service';
 import { GlobalConfigService } from '../../config/global-config.service';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { Store } from '@ngrx/store';
 import { UiHelperService } from '../../ui-helper/ui-helper.service';
 import { IS_ELECTRON } from '../../../app.constants';
