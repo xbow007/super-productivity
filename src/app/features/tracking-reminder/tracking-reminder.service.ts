@@ -33,6 +33,7 @@ export class TrackingReminderService {
   );
 
   _counter$: Observable<number> = realTimer$(1000);
+  // .pipe(startWith(900000));
 
   _manualReset$: Subject<void> = new Subject();
 
