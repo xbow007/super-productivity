@@ -19,18 +19,18 @@ import { GlobalConfigService } from '../config/global-config.service';
 import { MatDialog } from '@angular/material/dialog';
 import { LS } from '../../core/persistence/storage-keys.const';
 import { DialogTimelineSetupComponent } from './dialog-timeline-setup/dialog-timeline-setup.component';
-import { WorkContextService } from '../work-context/work-context.service';
 import { TaskRepeatCfgService } from '../task-repeat-cfg/task-repeat-cfg.service';
-import { Task } from '../tasks/task.model';
+import { Task, TaskPlanned } from '../tasks/task.model';
 import { DialogAddTaskReminderComponent } from '../tasks/dialog-add-task-reminder/dialog-add-task-reminder.component';
 import { AddTaskReminderInterface } from '../tasks/dialog-add-task-reminder/add-task-reminder-interface';
 import { loadFromRealLs, saveToRealLs } from '../../core/persistence/local-storage';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { selectCalendarProviders } from '../config/store/global-config.reducer';
 import { CalendarIntegrationService } from '../calendar-integration/calendar-integration.service';
 import { selectAllCalendarTaskEventIds } from '../tasks/store/task.selectors';
 import { CalendarIntegrationEvent } from '../calendar-integration/calendar-integration.model';
 import { distinctUntilChangedObject } from '../../util/distinct-until-changed-object';
+import { selectTimelineTasks } from '../work-context/store/work-context.selectors';
 
 @Component({
   selector: 'timeline',
@@ -42,6 +42,12 @@ import { distinctUntilChangedObject } from '../../util/distinct-until-changed-ob
 export class TimelineComponent implements OnDestroy {
   T: typeof T = T;
   TimelineViewEntryType: typeof TimelineViewEntryType = TimelineViewEntryType;
+
+  timelineTasks$: Observable<{
+    planned: TaskPlanned[];
+    unPlanned: Task[];
+  }> = this._store.pipe(select(selectTimelineTasks));
+
   icalEvents$: Observable<TimelineCalendarMapEntry[]> = this._store
     .select(selectCalendarProviders)
     .pipe(
@@ -86,7 +92,7 @@ export class TimelineComponent implements OnDestroy {
     );
 
   timelineEntries$: Observable<TimelineViewEntry[]> = combineLatest([
-    this._workContextService.timelineTasks$,
+    this.timelineTasks$,
     this._taskRepeatCfgService.taskRepeatCfgsWithStartTime$,
     this.taskService.currentTaskId$,
     this._globalConfigService.timelineCfg$,
@@ -127,7 +133,6 @@ export class TimelineComponent implements OnDestroy {
   constructor(
     public taskService: TaskService,
     private _taskRepeatCfgService: TaskRepeatCfgService,
-    private _workContextService: WorkContextService,
     private _globalConfigService: GlobalConfigService,
     private _matDialog: MatDialog,
     private _store: Store,
@@ -168,31 +173,12 @@ export class TimelineComponent implements OnDestroy {
   }
 
   async moveUp(task: Task): Promise<void> {
-    // if (task.parentId) {
-    //   const parentTask = await this.taskService.getByIdOnce$(task.parentId).toPromise();
-    //   if (parentTask.subTaskIds[0] === task.id) {
-    //     this.taskService.moveUp(task.parentId, undefined, false);
-    //     window.clearTimeout(this._moveUpTimeout);
-    //     window.setTimeout(() => this.taskService.focusTask(task.id), 50);
-    //     return;
-    //   }
-    // }
     this.taskService.moveUp(task.id, task.parentId, false);
     window.clearTimeout(this._moveUpTimeout);
     window.setTimeout(() => this.taskService.focusTask(task.id), 50);
   }
 
   async moveDown(task: Task): Promise<void> {
-    // if (task.parentId) {
-    //   const parentTask = await this.taskService.getByIdOnce$(task.parentId).toPromise();
-    //   if (parentTask.subTaskIds[parentTask.subTaskIds.length - 1] === task.id) {
-    //     this.taskService.moveDown(task.parentId, undefined, false);
-    //     window.clearTimeout(this._moveDownTimeout);
-    //     window.setTimeout(() => this.taskService.focusTask(task.id), 50);
-    //     return;
-    //   }
-    // }
-
     this.taskService.moveDown(task.id, task.parentId, false);
     window.clearTimeout(this._moveDownTimeout);
     window.setTimeout(() => this.taskService.focusTask(task.id), 50);
